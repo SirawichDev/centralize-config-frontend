@@ -1,0 +1,31 @@
+{
+	"compilerOptions": {
+		"module": "CommonJS",
+		"target": "es6",
+		"lib": ["es6", "dom"],
+		"sourceMap": true,
+		"allowJs": true,
+		"moduleResolution": "node",
+		"rootDir": "src",
+		"esModuleInterop": true,
+		"noImplicitReturns": true,
+		"noImplicitThis": true,
+		"noImplicitAny": false,
+		"strictNullChecks": true,
+		"resolveJsonModule": true,
+		"isolatedModules": true,
+		"jsx": "preserve",
+		"incremental": true
+	},
+	"exclude": [
+		"node_modules",
+		"build",
+		"scripts",
+		"acceptance-tests",
+		"webpack",
+		"jest",
+		"src/setupTests.ts"
+	],
+	"include": ["**/*.ts", "**/*.tsx"],
+	"types": ["typePatches"]
+}

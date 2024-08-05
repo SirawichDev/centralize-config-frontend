@@ -1,0 +1,10 @@
+pre-commit:
+  parallel: true
+  commands:
+    build-storybook:
+      run: npm run build-storybook
+
+commit-msg:
+  commands:
+    commitlint:
+      run: npx commitlint --edit $1
