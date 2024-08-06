@@ -10,7 +10,7 @@ type TDashboardNavbar = {
 	logoImage: ReactElement;
 };
 
-export const DashboardNavbar = (props: TDashboardNavbar) => {
+export const Navbar = (props: TDashboardNavbar) => {
 	const { onSidebarOpen, ...other } = props;
 	const settingsRef = useRef(null);
 
