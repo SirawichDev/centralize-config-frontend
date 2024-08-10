@@ -29,6 +29,6 @@
 		"jest",
 		"src/setupTests.ts"
 	],
-	"include": ["**/*.ts", "**/*.tsx", "./image.d.ts"],
+	"include": ["**/*.js", "**/*.ts", "**/*.jsx", "**/*.tsx", "./image.d.ts"],
 	"types": ["typePatches"]
 }
