@@ -2,7 +2,7 @@
 const config = {
 	stories: [
 		"../src/libs/**/*.mdx",
-		"../src/libs/atoms/**/*.stories.@(js|jsx|mjs|ts|tsx)",
+		"../src/libs/components/**/*.stories.@(js|jsx|mjs|ts|tsx)",
 	],
 	addons: [
 		"@storybook/addon-onboarding",
