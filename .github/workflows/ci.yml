@@ -1,0 +1,46 @@
+name: Check notification
+
+on:
+  push: 
+    branches:
+      - staging
+      - main
+  release: {}
+
+jobs:
+  success:
+    name: One with everything
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          ref: staging
+      - name: Microsoft Teams Notification
+        uses: dkershner6/post-api-call-action@v2
+        if: always()
+        with:
+          url: https://prod2-46.southeastasia.logic.azure.com:443/workflows/97ac80776f5c4c089b59000eb5e17388/triggers/manual/paths/invoke?api-version=2016-06-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=aBbcV6kvPjRq4Oi7bxVFIyLsLb6rJY2emAnqAQGiIHY
+          data: "{ \"repository\": \"${{github.repository}}\", \"name\": \"${{ github.actor }}\", \"Status\": \"Started\", \"ref_name\": \"${{github.ref_name}}\"}"
+      - name: Use Bun
+        uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: 1.0.11
+      - name: Install Deps
+        run: bun install
+      - name: Build project
+        run: bun run build-storybook
+      - name: Microsoft Teams Notification
+        uses: dkershner6/post-api-call-action@v2
+        if: always()
+        with:
+          url: https://prod2-46.southeastasia.logic.azure.com:443/workflows/97ac80776f5c4c089b59000eb5e17388/triggers/manual/paths/invoke?api-version=2016-06-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=aBbcV6kvPjRq4Oi7bxVFIyLsLb6rJY2emAnqAQGiIHY
+          data: "{ \"repository\": \"${{github.repository}}\", \"name\": \"${{ github.actor }}\", \"Status\": \"Build Success\", \"ref_name\": \"${{github.ref_name}}\"}"
+  # if_failure:
+  #   name: Only if failure
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - name: Microsoft Teams Notification
+  #       uses: dkershner6/post-api-call-action@v2
+  #       if: failure()
+  #       with:
+  #         url: https://prod2-51.southeastasia.logic.azure.com:443/workflows/0a99b1afe5eb4666a6de9e39bc58f7a5/triggers/manual/paths/invoke?api-version=2016-06-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=L2nimTEveqV8N9aUcDFjx9OKDDDfBBthuKD1ums6aG8

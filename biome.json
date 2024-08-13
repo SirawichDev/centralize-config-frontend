@@ -1,12 +1,79 @@
 {
-	"$schema": "https://biomejs.dev/schemas/1.8.3/schema.json",
+	"files": {
+		"include": [
+			"src/**/*.js",
+			"src/**/*.ts",
+			"src/**/*.jsx",
+			"src/**/*.tsx"
+		],
+		"ignore": [
+			"tests/*.js",
+			"src/**/*.test.js",
+			"src/**/*.test.ts"
+		]
+	},
+	"javascript": {
+		"formatter": {
+			"arrowParentheses": "always",
+			"jsxQuoteStyle": "single",
+			"quoteStyle": "single",
+			"semicolons": "always",
+			"trailingCommas": "none",
+			"quoteProperties": "asNeeded",
+			"bracketSpacing": true,
+			"bracketSameLine": false
+		}
+	},
+	"formatter": {
+		"enabled": true,
+		"formatWithErrors": false,
+		"indentStyle": "space",
+		"indentWidth": 2,
+		"lineWidth": 80,
+		"ignore": [],
+		"include": [
+			"**/*.js",
+			"**/*.ts",
+			"**/*.jsx",
+			"**/*.tsx",
+			"src/**/*.js",
+			"src/**/*.jsx",
+			"src/**/*.ts",
+			"src/**/*.tsx"
+		]
+	},
 	"organizeImports": {
 		"enabled": true
 	},
 	"linter": {
 		"enabled": true,
 		"rules": {
-			"recommended": true
+			"recommended": true,
+			"correctness": {
+				"useExhaustiveDependencies": "warn",
+				"noUndeclaredVariables": "error",
+				"noUnusedVariables": "warn",
+				"noUnreachable": "error",
+				"recommended": true,
+				"useHookAtTopLevel": "warn",
+				"noEmptyPattern": "error",
+				"noUnsafeOptionalChaining": "warn",
+				"noChildrenProp": "error",
+				"noUnusedLabels": "error",
+				"noRenderReturnValue": "warn"
+			},
+			"suspicious": {
+				"noExplicitAny": "off",
+				"noArrayIndexKey": "warn"
+			},
+			"complexity": {
+				"useLiteralKeys": "off",
+				"noExtraBooleanCast": "off",
+				"noUselessTernary": "off"
+			},
+			"performance": {
+				"noDelete": "off"
+			}
 		}
 	}
 }

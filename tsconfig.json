@@ -6,7 +6,10 @@
 		"sourceMap": true,
 		"allowJs": true,
 		"moduleResolution": "node",
-		"rootDir": "src",
+		"baseUrl": "src",
+		"paths": {
+			"@src/*": ["src/*"] // Replace 'src' with the directory you want to use for absolute imports
+		},
 		"esModuleInterop": true,
 		"noImplicitReturns": true,
 		"noImplicitThis": true,
@@ -26,6 +29,6 @@
 		"jest",
 		"src/setupTests.ts"
 	],
-	"include": ["**/*.ts", "**/*.tsx"],
+	"include": ["**/*.js", "**/*.ts", "**/*.jsx", "**/*.tsx", "./image.d.ts"],
 	"types": ["typePatches"]
 }
