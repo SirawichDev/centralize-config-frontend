@@ -1,5 +1,5 @@
 {
-  "name": "centralize-config-frontend",
+  "name": "@cporigin/centralize-config-frontend",
   "version": "1.1.0",
   "description": "",
   "main": "index.js",
@@ -8,6 +8,9 @@
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
     "lint": "lint"
+  },
+  "publishConfig": {
+    "@cporigin:registry": "https://npm.pkg.github.com"
   },
   "repository": {
     "type": "git",
