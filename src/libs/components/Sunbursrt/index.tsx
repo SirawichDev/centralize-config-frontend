@@ -1,8 +1,7 @@
 import React from 'react';
-import type { TSunbursrtChart } from './type';
 import Plot from 'react-plotly.js';
 
-export function SunburstChart(props: TSunbursrtChart) {
+export function SunburstChart(props) {
   return (
     <div id='myDiv'>
       <Plot
