@@ -2,12 +2,16 @@
   "name": "centralize-config-frontend",
   "version": "1.1.0",
   "description": "",
+  "private": true,
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
     "lint": "lint"
+  },
+  "publishConfig": {
+    "@cporigin:registry": "https://npm.pkg.github.com"
   },
   "repository": {
     "type": "git",
