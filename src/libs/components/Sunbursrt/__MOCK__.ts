@@ -23,5 +23,5 @@ export const MOCK_SUNBURST_DATA = [
 export const MOCK_SUNBURST_LAYOUT = {
   margin: { l: 0, r: 0, b: 0, t: 0 },
   width: 500,
-  height: 500
+  height: 500,
 };
