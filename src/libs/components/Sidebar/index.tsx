@@ -9,7 +9,7 @@ import {
 	Typography,
 } from "@mui/material";
 import React, { type ReactElement } from "react";
-import authStore from "libs/stores/user";
+import authStore from "stores/user";
 
 export const drawerWidth = 77;
 export const iconStyle = { fontSize: 24, color: "#353A40", mb: 0.5 };

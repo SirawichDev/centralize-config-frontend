@@ -7,11 +7,11 @@ import {
 	Typography,
 } from "@mui/material";
 import PropTypes from "prop-types";
-import userStore from "libs/stores/user";
 import React from "react";
+import authStore from "stores/user";
 
 export const AccountPopover = (props) => {
-	const user = userStore((e) => e.user);
+	const user = authStore((e) => e.user);
 
 	return (
 		<Popover
