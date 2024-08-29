@@ -2,7 +2,7 @@ import { AccountCircle, Menu, Person } from "@mui/icons-material";
 import { AppBar, Avatar, Box, IconButton, Toolbar } from "@mui/material";
 import React, { type ReactElement, useRef, useState } from "react";
 import { AccountPopover } from "./account-popover";
-import authStore from "libs/stores/user";
+import authStore from "stores/user";
 
 type TDashboardNavbar = {
 	backgroundColor?: string;
