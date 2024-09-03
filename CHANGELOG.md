@@ -1,5 +1,11 @@
 # centralize-config-frontend
 
+## 1.3.0
+
+### Minor Changes
+
+- change vite to nextjs complier
+
 ## 1.2.1
 
 ### Patch Changes

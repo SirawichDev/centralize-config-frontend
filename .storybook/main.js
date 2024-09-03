@@ -1,19 +1,25 @@
-/** @type { import('@storybook/react-vite').StorybookConfig } */
+/** @type { import('@storybook/nextjs').StorybookConfig } */
 const config = {
-	stories: [
-		"../src/libs/**/*.mdx",
-		"../src/libs/components/**/*.stories.@(js|jsx|mjs|ts|tsx)",
-	],
-	addons: [
-		"@storybook/addon-onboarding",
-		"@storybook/addon-links",
-		"@storybook/addon-essentials",
-		"@chromatic-com/storybook",
-		"@storybook/addon-interactions",
-	],
-	framework: {
-		name: "@storybook/react-vite",
-		options: {},
-	},
+  stories: ["../src/libs/components/**/*.mdx", "../src/libs/components/**/*.stories.@(js|jsx|mjs|ts|tsx)"],
+
+  addons: [
+    "@storybook/addon-onboarding",
+    "@storybook/addon-links",
+    "@storybook/addon-essentials",
+    "@chromatic-com/storybook",
+    "@storybook/addon-interactions",
+    "@storybook/addon-mdx-gfm"
+  ],
+
+  framework: {
+    name: "@storybook/nextjs",
+    options: {},
+  },
+
+  docs: {},
+
+  typescript: {
+    reactDocgen: "react-docgen-typescript"
+  }
 };
 export default config;
