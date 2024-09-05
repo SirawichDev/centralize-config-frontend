@@ -1,6 +1,6 @@
-import React from 'react';
 import type { TTypography } from './typography.interface';
-import { Skeleton, Typography as BaseTypography } from '@mui/material';
+import Skeleton from '@mui/material/Skeleton';
+import BaseTypography from '@mui/material/Typography';
 
 /**
  * Primary UI component for user interaction
